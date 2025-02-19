@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Dashboard</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            background: -webkit-linear-gradient(#fff, #ddd);
+            -webkit-text-fill-color: transparent;
+        }
+        .message {
+            margin: 20px 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .logout-button {
+            background: white;
+            color: #d6249f;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .logout-button:hover {
+            background: #d6249f;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Instagram</div>
+        <div class="message">Successfully Logged In</div>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function logout() {
+            alert("Logging out...");
+            window.location.href = "{{url_for('login')}}";
+        }
+    </script>
+</body>
+</html>
